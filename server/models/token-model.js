@@ -1,9 +1,9 @@
 import { DataTypes } from 'sequelize';
-import {sequelizeAdmin} from '../config/db-connect.js';
+import {sequelizeExtranet} from '../config/db-connect.js';
 import User from "./user-model.js";
 
 
-const TokenModel = sequelizeAdmin.define('TokenModel', {
+const TokenModel = sequelizeExtranet.define('TokenModel', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

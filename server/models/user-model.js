@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
-import {sequelizeAdmin} from '../config/db-connect.js';
+import {sequelizeExtranet} from '../config/db-connect.js';
 
 
-const User = sequelizeAdmin.define('User', {
+const User = sequelizeExtranet.define('User', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

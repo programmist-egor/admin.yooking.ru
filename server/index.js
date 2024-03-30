@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import router from "./router/auth-routes.js";
 import managementRoute from "./router/management-route.js";
-import {sequelizeAdmin, sequelizeExtranet} from "./config/db-connect.js";
+import { sequelizeExtranet} from "./config/db-connect.js";
 import cookieParser from "cookie-parser";
 import {errorMiddlewares} from "./middlewares/error-middlewares.js";
 import * as http from "http";
@@ -49,7 +49,6 @@ const PORT = process.env.PORT || 5001;
 const start = async () => {
     try {
         await sequelizeExtranet.sync();
-        await sequelizeAdmin.sync();
         server.listen(PORT, () => console.log(`Сервер работает на порту ${PORT}`));
     } catch (e) {
         console.log(e);

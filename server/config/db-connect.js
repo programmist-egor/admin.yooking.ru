@@ -1,21 +1,6 @@
 import {Sequelize} from "sequelize";
-import {configAdminDB, configExtranetDB} from "./db-config.js";
+import { configExtranetDB} from "./db-config.js";
 
-// // Создаем подключение к базе данных
-const sequelizeAdmin = new Sequelize(configAdminDB.DB, configAdminDB.USER, configAdminDB.PASSWORD, {
-    host: configAdminDB.HOST,
-    dialect: "mysql",
-    port: 3306,
-    pool: {
-        max: configAdminDB.pool.max,
-        min: configAdminDB.pool.min,
-        acquire: configAdminDB.pool.acquire,
-        idle: configAdminDB.pool.idle
-    },
-    define: {
-        timestamps: false
-    }
-});
 
 const sequelizeExtranet = new Sequelize(configExtranetDB.DB, configExtranetDB.USER, configExtranetDB.PASSWORD, {
     host: configExtranetDB.HOST,
@@ -33,4 +18,4 @@ const sequelizeExtranet = new Sequelize(configExtranetDB.DB, configExtranetDB.US
 });
 
 
-export {sequelizeAdmin, sequelizeExtranet}
+export { sequelizeExtranet}
